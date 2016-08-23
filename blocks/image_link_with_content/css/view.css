@@ -38,13 +38,15 @@
     border-radius: 400px;
     opacity: 0;
     transition: all .5s ease-in-out; }
-  .ccm-page .image-link-with-content:hover {
+  .ccm-page .image-link-with-content:hover, .ccm-page .image-link-with-content:focus, .ccm-page .image-link-with-content:active {
     color: #FFF;
     text-decoration: none;
     cursor: default; }
-    .ccm-page .image-link-with-content:hover::before {
+    .ccm-page .image-link-with-content:hover p, .ccm-page .image-link-with-content:hover h1, .ccm-page .image-link-with-content:focus p, .ccm-page .image-link-with-content:focus h1, .ccm-page .image-link-with-content:active p, .ccm-page .image-link-with-content:active h1 {
+      text-decoration: none; }
+    .ccm-page .image-link-with-content:hover::before, .ccm-page .image-link-with-content:focus::before, .ccm-page .image-link-with-content:active::before {
       opacity: 1; }
-    .ccm-page .image-link-with-content:hover .image-link-with-content-container .image-link-with-content-lower {
+    .ccm-page .image-link-with-content:hover .image-link-with-content-container .image-link-with-content-lower, .ccm-page .image-link-with-content:focus .image-link-with-content-container .image-link-with-content-lower, .ccm-page .image-link-with-content:active .image-link-with-content-container .image-link-with-content-lower {
       max-height: 400px;
       opacity: 1; }
   .ccm-page .image-link-with-content .image-link-with-content-container {
