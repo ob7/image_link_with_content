@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="" src="documentation/images/logo.svg"/>
+    <img alt="" src="documentation/images/logo.png"/>
 </p>
 <hr/>
 <h4 align="center">
