@@ -8,7 +8,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'image_link_with_content';
     protected $appVersionRequired = '5.7.5.1';
-    protected $pkgVersion = '0.9';
+    protected $pkgVersion = '0.9.1';
 
     public function getPackageName()
     {

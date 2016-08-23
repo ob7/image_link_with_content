@@ -6,22 +6,22 @@ $nh = Core::make('helper/navigation');
 if (is_object($f) && $f->getFileID()) {
     $thumb = $im->getThumbnail($f, 500, 500, true);
     ?>
-    <a href="<?php echo $linkUrl?>" class="image-link-with-content" style="background-image: url('<?php echo $thumb->src?>');">
+    <a href="<?php echo h($linkUrl)?>" class="image-link-with-content" style="background-image: url('<?php echo h($thumb->src)?>');">
         <div class="image-link-with-content-container">
             <?php if($titleText){?>
                 <h1>
-                    <?php echo $titleText?>
+                    <?php echo h($titleText)?>
                 </h1>
             <?php }?>
             <div class="image-link-with-content-lower">
                 <?php if($content){?>
                     <p>
-                        <?php echo $content?>
+                        <?php echo h($content)?>
                     </p>
                 <?php }?>
                 <?php if($linkText){?>
                     <p class="small">
-                        <?php echo $linkText?>
+                        <?php echo h($linkText)?>
                     </p>
                 <?php }?>
             </div>
