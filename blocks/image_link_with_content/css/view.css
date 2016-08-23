@@ -1,5 +1,8 @@
 @charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=PT+Sans:400,700";
+.ccm-page a.image-link-with-content:hover {
+  cursor: hand;
+  cursor: pointer; }
 .ccm-page .image-link-with-content {
   filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.75));
   -webkit-filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.75));
@@ -18,11 +21,12 @@
   position: relative;
   padding: 16px; }
   .ccm-page .image-link-with-content p, .ccm-page .image-link-with-content h1 {
-    font-family: "PT Sans", sans-serif; }
+    font-family: "PT Sans", sans-serif;
+    color: #FFF; }
   .ccm-page .image-link-with-content p.small::before {
     content: '—';
     display: block;
-    margin-top: 32px; }
+    margin-top: 8px; }
   .ccm-page .image-link-with-content::before {
     content: '';
     position: absolute;
@@ -37,8 +41,7 @@
   .ccm-page .image-link-with-content:hover {
     color: #FFF;
     text-decoration: none;
-    cursor: hand;
-    cursor: pointer; }
+    cursor: default; }
     .ccm-page .image-link-with-content:hover::before {
       opacity: 1; }
     .ccm-page .image-link-with-content:hover .image-link-with-content-container .image-link-with-content-lower {

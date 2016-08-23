@@ -10,6 +10,7 @@ if (is_object($f) && $f->getFileID()) {
     <a href="<?php echo h($linkUrl)?>" class="image-link-with-content" style="background-image: url('<?php echo h($thumb->src)?>');">
     <?php } else {?>
     <div class="image-link-with-content" style="background-image: url('<?php echo h($thumb->src)?>');">
+    <?php } ?>
         <div class="image-link-with-content-container">
             <?php if($titleText){?>
                 <h1>
@@ -29,7 +30,6 @@ if (is_object($f) && $f->getFileID()) {
                 <?php }?>
             </div>
         </div>
-    <?php } ?>
     <?php if ($linkUrl) {?>
     </a>
     <?php } else {?>

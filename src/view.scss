@@ -1,16 +1,23 @@
 @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,700';
 $mainFont: 'PT Sans', sans-serif;
 .ccm-page {
+    a.image-link-with-content {
+        &:hover {
+            cursor: hand;
+            cursor: pointer;
+        }
+    }
     .image-link-with-content {
         p,h1 {
             font-family: $mainFont;
+            color: #FFF;
         }
         p {
             &.small {
                 &::before {
                     content: '—';
                     display: block;
-                    margin-top: 32px;
+                    margin-top: 8px;
                 }
             }
         }
@@ -45,8 +52,7 @@ $mainFont: 'PT Sans', sans-serif;
         &:hover {
             color: #FFF;
             text-decoration: none;
-            cursor: hand;
-            cursor: pointer;
+            cursor: default;
             &::before {
                 opacity: 1;
             }
