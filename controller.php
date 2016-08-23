@@ -23,7 +23,10 @@ class Controller extends Package
     public function install()
     {
         $pkg = parent::install();
-		$bt = BlockType::installBlockType('image_link_with_content', $pkg);
+        $bt = BlockType::getByHandle('image_link_with_content');
+        if (!is_object($bt)) {
+            $bt = BlockType::installBlockType('image_link_with_content', $pkg);
+        }
     }
 }
 
