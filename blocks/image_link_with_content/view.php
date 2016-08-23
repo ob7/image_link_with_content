@@ -2,6 +2,7 @@
 
 $im = Core::make('helper/image');
 $nh = Core::make('helper/navigation');
+$th = Core::make('helper/text');
 
 if (is_object($f) && $f->getFileID()) {
     $thumb = $im->getThumbnail($f, 500, 500, true);
@@ -18,9 +19,11 @@ if (is_object($f) && $f->getFileID()) {
                 </h1>
             <?php }?>
             <div class="image-link-with-content-lower">
-                <?php if($content){?>
+                <?php if($content){
+                    $shortened = $th->shorten($content, 200);
+                ?>
                     <p>
-                        <?php echo h($content)?>
+                        <?php echo h($shortened)?>
                     </p>
                 <?php }?>
                 <?php if($linkText){?>
