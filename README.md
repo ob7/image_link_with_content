@@ -24,3 +24,4 @@
     <img alt="" src="documentation/images/colors.jpg"/>
     <p>To change colors of elements displayed by the block, click the Styling tab where you will be presented with the color selectors that change the colors used by the block.  A short description of which color you are changing appears below each color.</p>
 </article>
+Live example coming soon
