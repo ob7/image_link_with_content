@@ -6,7 +6,38 @@ $th = Core::make('helper/text');
 
 if (is_object($f) && $f->getFileID()) {
     $thumb = $im->getThumbnail($f, 500, 500, true);
-    ?>
+}?>
+<?php if (!$c->isEditMode()) {?>
+
+    <?php if ($backgroundColor) {?>
+        <style>
+         .image-link-with-content:before {
+             background-color: <?php echo h($backgroundColor)?>;
+         }
+        </style>
+    <?php } ?>
+    <?php if ($mainBackgroundColor) {?>
+        <style>
+         .image-link-with-content {
+             background-color: <?php echo h($mainBackgroundColor)?>;
+         }
+        </style>
+    <?php } ?>
+    <?php if ($mainBackgroundColor) {?>
+        <style>
+         .ccm-page .image-link-with-content p {
+             color: <?php echo h($mainContentColor)?>;
+         }
+        </style>
+    <?php } ?>
+    <?php if ($titleColor) {?>
+        <style>
+         .ccm-page .image-link-with-content h1 {
+             color: <?php echo h($titleColor)?>;
+         }
+        </style>
+    <?php } ?>
+
     <?php if ($linkUrl) {?>
     <a href="<?php echo h($linkUrl)?>" class="image-link-with-content" style="background-image: url('<?php echo h($thumb->src)?>');">
     <?php } else {?>
@@ -38,8 +69,8 @@ if (is_object($f) && $f->getFileID()) {
     <?php } else {?>
     </div>
     <?php } ?>
-    <?php
-} elseif ($c->isEditMode()) {?>
-    <div class="ccm-edit-mode-disabled-item"><?php  echo t('Empty Image Link With Content Block.') ?></div>
+
+    <?php } elseif ($c->isEditMode()) {?>
+    <div class="ccm-edit-mode-disabled-item"><?php  echo t('Image Links view is disabled while in edit mode') ?></div>
     <?php
 }?>
