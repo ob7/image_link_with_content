@@ -11,6 +11,9 @@
 <p align="center">
     <img alt="" src="documentation/images/image-link-hover.gif"/>
 </p>
+<p align="center">
+    <a href="http://concrete5-addons.archebian.org/image-link-with-content" target="_blank">Click here for live preview.</a>
+</p>
 <article class="markdown-body">
     <h1>Introduction</h1>
     <p>Simple to use block.  Includes preset layout and functionality, with the ability for you to add your own content and image and set the blocks colors to your desire.</p>
