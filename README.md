@@ -3,7 +3,7 @@
 </p>
 <hr/>
 <h4 align="center">
-    Image Link With Content is a Concrete5 add-on
+    Image Link With Content <i>is a Concrete5 add-on</i>
 </h4>
 <p align="center">
     Displays an image and content within an internal link.
