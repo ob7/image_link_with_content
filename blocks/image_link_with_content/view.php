@@ -59,6 +59,6 @@ if (is_object($f) && $f->getFileID()) {
     <?php } ?>
 
     <?php } elseif ($c->isEditMode()) {?>
-    <div class="ccm-edit-mode-disabled-item"><?php  echo t('Image Links view is disabled while in edit mode') ?></div>
+    <div class="ccm-edit-mode-disabled-item"><?php  echo t('Image Link With Content is disabled while in edit mode') ?></div>
     <?php
 }?>
