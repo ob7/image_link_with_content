@@ -21,12 +21,12 @@ $th = Core::make('helper/text');
                     $shortened = $th->shorten($content, 300);
                 ?>
                     <p>
-                        <?php echo h($shortened)?>
+                        <?php echo h($th->shorten($content,300))?>
                     </p>
                 <?php }?>
                 <?php if($linkText){?>
                     <p class="small">
-                        <?php echo h($linkText)?>
+                        <?php echo h($th->shorten($linkText, 48))?>
                     </p>
                 <?php }?>
             </div>

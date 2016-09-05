@@ -61,7 +61,7 @@ class Controller extends BlockController
         // Main Background Color Style
         $mainBackgroundColor = $this->mainBackgroundColor;
         if ($mainBackgroundColor) {
-            $al->register('css-inline', 'imagelinkstylesmbg', '.image-link-with-content-'.$bID.' { background-color:' .$mainBackgroundColor.' };');
+            $al->register('css-inline', 'imagelinkstylesmbg', '.image-link-with-content-'.$bID.' { background-color:' .$mainBackgroundColor.' !important };');
             $this->requireAsset('css-inline', 'imagelinkstylesmbg');
         }
         // Title Color Style
