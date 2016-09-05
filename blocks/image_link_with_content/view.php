@@ -39,7 +39,7 @@ if (is_object($f) && $f->getFileID()) {
             <?php }?>
             <div class="image-link-with-content-lower">
                 <?php if($content){
-                    $shortened = $th->shorten($content, 200);
+                    $shortened = $th->shorten($content, 300);
                 ?>
                     <p>
                         <?php echo h($shortened)?>
