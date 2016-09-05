@@ -1,35 +1,14 @@
 <?php  defined('C5_EXECUTE') or die("Access Denied.");
 
-$im = Core::make('helper/image');
 $nh = Core::make('helper/navigation');
 $th = Core::make('helper/text');
-
-if (is_object($f) && $f->getFileID()) {
-    $thumb = $im->getThumbnail($f, 500, 500, true);
-}?>
+?>
 <?php if (!$c->isEditMode()) {?>
 
-    <?php if ($backgroundColor && $mainBackgroundColor && $titleColor && $mainContentColor) {?>
-        <style>
-         .image-link-with-content-<?php echo h($bID)?>:before {
-             background-color: <?php echo h($backgroundColor)?>;
-         }
-         .image-link-with-content-<?php echo h($bID)?> {
-             background-color: <?php echo h($mainBackgroundColor)?>;
-         }
-         .image-link-with-content-<?php echo h($bID)?> p {
-             color: <?php echo h($mainContentColor)?>;
-         }
-         .image-link-with-content-<?php echo h($bID)?> h1 {
-             color: <?php echo h($titleColor)?>;
-         }
-        </style>
-    <?php } ?>
-
     <?php if ($linkUrl) {?>
-    <a href="<?php echo h($linkUrl)?>" class="image-link-with-content image-link-with-content-<?php echo h($bID)?>" style="background-image: url('<?php echo h($thumb->src)?>');">
+    <a href="<?php echo h($linkUrl)?>" class="image-link-with-content image-link-with-content-<?php echo h($bID)?>">
     <?php } else {?>
-    <div class="image-link-with-content image-link-with-content-<?php echo h($bID)?>" style="background-image: url('<?php echo h($thumb->src)?>');">
+    <div class="image-link-with-content image-link-with-content-<?php echo h($bID)?>">
     <?php } ?>
         <div class="image-link-with-content-container">
             <?php if($titleText){?>

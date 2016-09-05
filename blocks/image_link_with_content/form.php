@@ -19,7 +19,7 @@ echo Core::make('helper/concrete/ui')->tabs(array(
         </div>
         <div class="form-group">
             <?php  echo $form->label('titleText', t('Title Text')); ?>
-            <?php  echo $form->text('titleText', $titleText, array('maxlength'=>'24')); ?>
+            <?php  echo $form->text('titleText', $titleText, array('maxlength'=>'20')); ?>
         </div>
         <div class="form-group">
             <?php  echo $form->label('content', t('Content')); ?>
@@ -44,14 +44,14 @@ echo Core::make('helper/concrete/ui')->tabs(array(
         <div class="col-xs-12 col-lg-6">
             <div class="form-group">
                 <?php echo $form->label('backgroundColor', t('Hover Overlay Color'))?><br>
-                <?php echo $color->output('backgroundColor', $backgroundColor ? $backgroundColor : 'rgba(0,0,0,0.5)', array('showAlpha' => 'true'));?>
+                <?php echo $color->output('backgroundColor', $backgroundColor ? $backgroundColor : 'rgba(0,0,0,0.5)', array('showAlpha' => true,'clickoutFiresChange'=>true));?>
                 <p class="small muted"><?php echo t('This is the color that overlays the block when hovered as the content shows up on top.')?></p>
             </div>
         </div>
         <div class="col-xs-12 col-lg-6">
             <div class="form-group">
                 <?php echo $form->label('backgroundColor', t('Main Background Color'))?><br>
-                <?php echo $color->output('mainBackgroundColor', $mainBackgroundColor ? $mainBackgroundColor : 'rgba(0,0,0,0.5)', array('showAlpha' => 'true'));?>
+                <?php echo $color->output('mainBackgroundColor', $mainBackgroundColor ? $mainBackgroundColor : 'rgba(0,0,0,0.5)', array('showAlpha'=>true,'clickoutFiresChange'=>true));?>
                 <p class="small muted"><?php echo t('The blocks main background color. Useful for when your using this block without an image, as the image will cover this color.')?></p>
             </div>
         </div>
@@ -60,14 +60,14 @@ echo Core::make('helper/concrete/ui')->tabs(array(
         <div class="col-xs-12 col-lg-6">
             <div class="form-group">
                 <?php echo $form->label('titleColor', t('Main Title Color'))?><br>
-                <?php echo $color->output('titleColor', $titleColor ? $titleColor : 'rgba(255,255,255,1)', array('showAlpha' => 'true'));?>
+                <?php echo $color->output('titleColor', $titleColor ? $titleColor : 'rgba(255,255,255,1)', array('showAlpha'=>true,'clickoutFiresChange'=>true));?>
                 <p class="small muted"><?php echo t('This is the color for the main title always displayed.')?></p>
             </div>
         </div>
         <div class="col-xs-12 col-lg-6">
             <div class="form-group">
                 <?php echo $form->label('mainContentColor', t('Main Content Color'))?><br>
-                <?php echo $color->output('mainContentColor', $mainContentColor ? $mainContentColor : 'rgba(255,255,255,1)', array('showAlpha' => 'true'));?>
+                <?php echo $color->output('mainContentColor', $mainContentColor ? $mainContentColor : 'rgba(255,255,255,1)', array('showAlpha'=>true,'clickoutFiresChange'=>true));?>
                 <p class="small muted"><?php echo t('This changes the color of the text shown after you hover.')?></p>
             </div>
         </div>

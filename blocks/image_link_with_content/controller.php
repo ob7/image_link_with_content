@@ -4,6 +4,9 @@ namespace Concrete\Package\ImageLinkWithContent\Block\ImageLinkWithContent;
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\File\File;
 use Concrete\Core\Page\Page;
+use Asset;
+use AssetList;
+use Core;
 
 class Controller extends BlockController
 {
@@ -39,16 +42,50 @@ class Controller extends BlockController
 
     public function view()
     {
-        // Check for a valid File in the view
+        $this->set('c', Page::getCurrentPage()); //for checking if in edit mode
+
+        $linkToC = Page::getByID($this->internalLinkCID); //get link object
+        if (is_object($linkToC) && !$linkToC->isError()) { //if exists store link in var
+            $linkUrl = $linkToC->getCollectionLink();
+            $this->set('linkUrl', $linkUrl);
+        }
+
+        $bID = $this->bID; //used for applying styles to individual blocks so multiple blocks on same page dont conflict with one another
+        $al = AssetList::getInstance(); // for registering inline css instead of injecting via view
+        // Background Color Style
+        $backgroundColor = $this->backgroundColor;
+        if ($backgroundColor) {
+            $al->register('css-inline', 'imagelinkstylesbg', '.image-link-with-content-'.$bID.':before { background-color:' .$backgroundColor.' };');
+            $this->requireAsset('css-inline', 'imagelinkstylesbg');
+        }
+        // Main Background Color Style
+        $mainBackgroundColor = $this->mainBackgroundColor;
+        if ($mainBackgroundColor) {
+            $al->register('css-inline', 'imagelinkstylesmbg', '.image-link-with-content-'.$bID.' { background-color:' .$mainBackgroundColor.' };');
+            $this->requireAsset('css-inline', 'imagelinkstylesmbg');
+        }
+        // Title Color Style
+        $titleColor = $this->titleColor;
+        if ($titleColor) {
+            $al->register('css-inline', 'imagelinkstylestc', '.image-link-with-content-'.$bID.' h1 { color:' .$titleColor.' !important };');
+            $this->requireAsset('css-inline', 'imagelinkstylestc');
+        }
+        // Main Content Color Style
+        $mainContentColor = $this->mainContentColor;
+        if ($mainContentColor) {
+            $al->register('css-inline', 'imagelinkstylesmcc', '.image-link-with-content-'.$bID.' p { color:' .$mainContentColor.' !important };');
+            $this->requireAsset('css-inline', 'imagelinkstylesmcc');
+        }
+        // Background Image Style
         $f = File::getByID($this->fID);
         $this->set('f', $f);
-        $this->set('c', Page::getCurrentPage());
-
-        $linkToC = Page::getByID($this->internalLinkCID);
-        if (is_object($linkToC) && !$linkToC->isError()) {
-            $linkUrl = $linkToC->getCollectionLink();
+        if (is_object($f) && $f->getFileID()) {
+            $ih = Core::make('helper/image');
+            $thumb = $ih->getThumbnail($f, 500, 500, true);
+            $al->register('css-inline', 'imagelinkstylesimage', '.image-link-with-content-'.$bID.' { background-image: url("' .$thumb->src.'"); };');
+            $this->requireAsset('css-inline', 'imagelinkstylesimage');
         }
-        $this->set('linkUrl', $linkUrl);
+
     }
 
     public function save($data)
