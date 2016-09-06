@@ -2,4 +2,3 @@ This software is licensed under the terms described in the concrete5.org marketp
 
 ---------------------------------------------------------------------
 Graphics used in icon are pieced together using free icons from flaticon.com
-See flaticon.pdf for a copy of the licensing agreement.
