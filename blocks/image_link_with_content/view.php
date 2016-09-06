@@ -12,9 +12,9 @@ $th = Core::make('helper/text');
     <?php } ?>
         <div class="image-link-with-content-container">
             <?php if($titleText){?>
-                <h1>
+                <h2>
                     <?php echo h($titleText)?>
-                </h1>
+                </h2>
             <?php }?>
             <div class="image-link-with-content-lower">
                 <?php if($content){

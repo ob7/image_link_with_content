@@ -67,7 +67,7 @@ class Controller extends BlockController
         // Title Color Style
         $titleColor = $this->titleColor;
         if ($titleColor) {
-            $al->register('css-inline', 'imagelinkstylestc', '.image-link-with-content-'.$bID.' h1 { color:' .$titleColor.' !important };');
+            $al->register('css-inline', 'imagelinkstylestc', '.image-link-with-content-'.$bID.' h2 { color:' .$titleColor.' !important };');
             $this->requireAsset('css-inline', 'imagelinkstylestc');
         }
         // Main Content Color Style

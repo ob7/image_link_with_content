@@ -20,13 +20,13 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'blocks/image_link_with_content/css/view.css': 'src/view.scss',
+                    'blocks/image_link_with_content/css/view.css': 'SRC/view.scss',
                 }
             }
         },
         watch: {
             src: {
-                files: ['src/view.scss'],
+                files: ['SRC/view.scss'],
                 tasks: ['default'],
             },
         },
